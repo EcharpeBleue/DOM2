@@ -10,11 +10,6 @@ function AddPromptedParagraph(){
     newToggleVisibility.addEventListener('click', 
     function(event){
         console.log('affichermasquer un element');
-        // if ((newParagraph.style.display=='') || (newParagraph.style.display=='block')){
-        //     newParagraph.style.display='none';
-        // } else {
-        //     newParagraph.style.display='block';
-        // }
         const nouvelleVisibilite = (newParagraph.value=='none')?'block':'none';
         ToggleElement(newParagraph,nouvelleVisibilite);
         console.log('newParagraph'+newParagraph.value);
@@ -37,16 +32,7 @@ function creationTitle(promptedTitle) {
         document.body.appendChild(newTitle);
     }
 }
-// function switchVisibilityAllParagraphs() {
-//     let selectedParagraphs = document.querySelectorAll('p');
-//     selectedParagraphs.forEach(function (p) {
-//         if ((p.style.display == '') || (p.style.display == 'block')) {
-//             p.style.display = 'none';
-//         } else {
-//             p.style.display = 'block';
-//         }
-//     });
-// }
+
 function switchVisibilityAllParagraphs() {
     let selectedParagraphs = document.querySelectorAll('p');
     console.log(ToggleVisibilityButton.value);
@@ -59,26 +45,19 @@ function switchVisibilityAllParagraphs() {
     
     ToggleVisibilityButton.value=nouvelleVisibility;
     ToggleVisibilityButton.textContent= (nouvelleVisibility=='none')?'Afficher':'Masquer';
-
 }
-function ToggleElement(pElement, targetVisibilty) {
-    // if ((pElement.style.display == '') || (pElement.style.display == 'block')) {
-    //     pElement.style.display = 'none';
-    // } else {
-    //     pElement.style.display = 'block';
-    // }
-    //pElement.style.display = ((pElement.style.display == '') || (pElement.style.display == 'block'))?'none':'block'
-    console.log('visibilite cible'+targetVisibilty);
 
+function ToggleElement(pElement, targetVisibilty) {
+    console.log('visibilite cible'+targetVisibilty);
     pElement.value = targetVisibilty;
     pElement.style.display = targetVisibilty
-   
-   
 }
+
 function defaultDisplayValue(pElement)
 {
     return (pElement.style.display == '') || (pElement.style.display == 'block');
 }
+
 function switchBlackAndWhite() {
     let body = document.querySelector('body');
     let currentColor = window.getComputedStyle(body).backgroundColor;
